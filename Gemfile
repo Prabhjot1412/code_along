@@ -74,3 +74,7 @@ group :test do
 end
 
 gem 'rubocop-rails', '~> 2.16'
+
+gem 'scss', '~> 1.0'
+
+gem 'font-awesome-sass', '~> 6.2'
