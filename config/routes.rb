@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    conformations: 'users/conformations'
+    conformations: 'users/conformations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 end
