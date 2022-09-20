@@ -2,7 +2,7 @@
 
 # Be sure to restart your server when you modify this file.
 class HomeController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[landing_page]
+  skip_before_action :authenticate_user!, only: %i[landing_page privacy terms]
   def landing_page; end
 
   def privacy; end

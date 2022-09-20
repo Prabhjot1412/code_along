@@ -12,13 +12,23 @@
  *= require_tree .
  *= require_self
  */
- @import "font-awesome";
+@import "font-awesome";
  
- body { background-color: #FFF0F5 !important;}
+body { background-color: #FFF0F5 !important;}
 
- .spin{
-    transition: transform .7s ease-in-out;
-    transform: rotate(360deg) !important; 
+a {text-decoration: none !important;}
+
+html {
+  margin: 0 !important;
 }
 
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
+footer {
+    margin-top: auto !important;
+}
  
