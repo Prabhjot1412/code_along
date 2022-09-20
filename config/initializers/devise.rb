@@ -274,8 +274,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
 
-  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google,:id), Rails.application.credentials.dig(:google,:secret)
-
+  config.omniauth :google_oauth2, ENV["GOOGLE_ID"],ENV["GOOGLE_SECRET"]
+  OmniAuth.config.allowed_request_methods = %i[get]
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
