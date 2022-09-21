@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#landing_page'
   get 'privacy', to: 'home#privacy'
   get 'terms', to: 'home#terms'
+  resources :user, only: %i[index show]
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',

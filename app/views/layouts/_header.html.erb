@@ -13,8 +13,13 @@
           <div class="fa fa-home"></div>
           Home
         <% end %>
+        <% if current_user %>
+          <%= link_to user_index_path, class: "nav-link #{'active fw-bold' if current_page?(user_index_path)}" do %>
+            <div class="fa fa-users"></div>
+            User list
+          <% end %>
+        <%end%>
       </ul>
-			
       <ul class="navbar-nav ms-auto">
         <% if current_user %>
           <li class="nav-item dropdown">
