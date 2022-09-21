@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/omniauth/omniauth-github.git
+  revision: fa3e9cfb3c78c7cb26e641621d81b08627600cc2
+  branch: master
+  specs:
+    omniauth-github (2.0.0)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -304,6 +313,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.2)
   importmap-rails
   jbuilder
+  omniauth-github!
   omniauth-google-oauth2 (~> 1.1)
   omniauth-rails_csrf_protection (~> 1.0)
   pg (~> 1.1)
