@@ -276,7 +276,7 @@ Devise.setup do |config|
   if Rails.env.development?
     config.omniauth :github, ENV['GITHUB_ID_DEVELOPMENT'], ENV['GITHUB_SECRET_DEVELOPMENT']
   elsif Rails.env.production?
-    config.omniauth :github, ENV['GITHUB_ID_PRODUCTION'], ENV['GITHUB_SECRET_PRODUCTION']
+    config.omniauth :github, ENV['GITHUB_ID_PRODUCTION'], ENV['GITHUB_SECRET_PRODUCTION'], scope: 'user:email'
   end
   config.omniauth :google_oauth2, ENV['GOOGLE_ID'], ENV['GOOGLE_SECRET']
   # Ex:- scope :active, -> {where(:active => true)}
