@@ -15,11 +15,17 @@ module Users
         redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
       end
     end
+
     def google_oauth2
-      handle_auth "google_oauth2"
+      handle_auth 'google_oauth2'
     end
+
     def github
-      handle_auth "github"
+      handle_auth 'github'
+    end
+
+    def failure
+      redirect_to root_path, alert: 'something went wrong'
     end
   end
 end

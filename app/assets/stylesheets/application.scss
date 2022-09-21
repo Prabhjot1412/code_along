@@ -14,7 +14,9 @@
  */
 @import "font-awesome";
  
-body { background-color: #FFF0F5 !important;}
+body { background-color: #FFF0F5 !important;
+  word-break: break-all !important;
+}
 
 a {text-decoration: none !important;}
 
