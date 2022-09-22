@@ -12,7 +12,7 @@ class User < ApplicationRecord
                          password: Devise.friendly_token[0, 20],
                          provider: access_token.provider,
                          uid: access_token.uid,
-                         image: access_token.info.image,
+                         image: access_token.info.image
                          )
     user.skip_confirmation!
     user
