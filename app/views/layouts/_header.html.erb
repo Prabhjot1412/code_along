@@ -25,7 +25,6 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <% if current_user.image?%>
-                debugger
                 <%=image_tag current_user.image , size: "30x30" , class: "rounded-circle"%>
               <%else%>
                 <div class="fa fa-user"></div>
@@ -33,6 +32,10 @@
               <b><%= current_user.username %></b>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to user_path(current_user), class: "dropdown-item #{'active fw-bold' if current_page?(user_path(current_user))}" do %>
+                <div class="fa fa-user"></div>
+                <b>my Profile</b>
+              <% end %>
               <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
                 <div class="fa fa-cog"></div>
                 <b>Account settings</b>

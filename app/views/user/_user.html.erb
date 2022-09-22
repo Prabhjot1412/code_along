@@ -1,2 +1,3 @@
 Name: <%=user.name%><br>
 Email: <%=user.email%><br>
+Confirmation status: <%= current_user.confirmed? ? "Confirmed" : "unconfirmed" %>
