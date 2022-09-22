@@ -88,3 +88,6 @@ gem 'omniauth-rails_csrf_protection', '~> 1.0'
 gem 'figaro', '~> 1.2'
 
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem "faker", "~> 2.23"
+
+gem "pagy", "~> 5.10"
