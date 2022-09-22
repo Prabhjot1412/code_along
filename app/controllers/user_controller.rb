@@ -3,7 +3,7 @@
 # true
 class UserController < ApplicationController
   def index
-    @user = User.all
+    @pagy,@user = pagy(User.all.order(email: :asc))
   end
 
   def show

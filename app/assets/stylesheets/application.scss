@@ -33,4 +33,13 @@ body {
 footer {
     margin-top: auto !important;
 }
- 
+
+.page-link {
+  background-color: #da829f !important;
+}
+.active {
+  color: red !important;
+}
+.active .page-link {
+  color: red !important;
+}
