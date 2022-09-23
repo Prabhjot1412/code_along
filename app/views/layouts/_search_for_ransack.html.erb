@@ -1,6 +1,7 @@
 <%= search_form_for @q ,url: user_index_path do |f| %>
 
-  <%= f.label :email_cont , 'Search ' %>
-  <%= f.search_field :email_cont %>
-  <%= f.submit %>
+  <%= f.search_field :email_cont , placeholder: 'search'%>
+  <%= f.button class: "btn btn-info" do%>
+    <i class="fa fa-search"></i>
+  <%end%>
 <% end %>
