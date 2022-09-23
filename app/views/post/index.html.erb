@@ -1,0 +1,22 @@
+<h1><%=current_user.username %>'s Posts</h1>
+<%if @posts.empty?%>
+<p>You haven't created any posts yet</p>
+<hr>
+<%else%>
+<%= render partial: "user/pagy_nav", locals: {pagy: @pagy} %>
+  <ol>
+  <%@posts.each do |p|%>
+    <li><b><%=p.title%></b></li><br>
+    <%=p.body%>
+    <hr>    
+  <%end%>
+  </ol>
+<%end%>
+<h3>Create new post</h3>
+<%= form_with url: '/post', method: :post do |f|%>
+  <%=f.label :title, 'Title'%><br>
+  <%=f.text_field :title%><br><br>
+  <%=f.label :body, "Post :-"%><br>
+  <%=f.text_area :body%><br>
+  <%=f.submit 'Submit'%>
+<%end%>

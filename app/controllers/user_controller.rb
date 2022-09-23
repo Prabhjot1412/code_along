@@ -3,6 +3,7 @@
 # true
 class UserController < ApplicationController
   def index
+    Pagy::DEFAULT[:items] = 10
     # @pagy,@user = pagy(User).order(email: :asc)
     @q = User.order(email: :asc).ransack(params[:q])
     @pagy, @user = pagy(@q.result(distinct: true))

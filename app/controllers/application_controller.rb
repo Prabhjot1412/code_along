@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+include ApplicationHelper
+
 class ApplicationController < ActionController::Base
   include Pagy::Backend
 

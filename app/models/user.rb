@@ -5,6 +5,7 @@ class User < ApplicationRecord
   #  :lockable, :timeoutable
   devise :invitable, :database_authenticatable, :registerable, :trackable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[google_oauth2 github]
+  has_many :posts, dependent: :destroy
   def self.from_omniauth(access_token)
     user = User.where(email: access_token.info.email).first
     user ||= User.create(name: access_token.info.name,
