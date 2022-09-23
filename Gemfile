@@ -91,3 +91,5 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "faker", "~> 2.23"
 
 gem "pagy", "~> 5.10"
+
+gem "ransack", "~> 3.2"
