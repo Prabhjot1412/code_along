@@ -3,7 +3,9 @@
 # true
 class UserController < ApplicationController
   def index
-    @pagy,@user = pagy(User.all.order(email: :asc))
+    # @pagy,@user = pagy(User).order(email: :asc)
+    @q = User.order(email: :asc).ransack(params[:q])
+    @pagy, @user = pagy(@q.result(distinct: true))
   end
 
   def show

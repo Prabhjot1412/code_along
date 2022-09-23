@@ -1,12 +1,15 @@
+<%= render partial: 'layouts/search_for_ransack', locals: {q: @q}%>
 <br>
 <h1>Users: <%=@user.count%></h1>
 <%= render partial: "user/pagy_nav", locals: {pagy: @pagy} %>
+<br>
 <ol>
 <%@user.each do |user|%>
 <li><%= render partial: "user/user",locals: {user: user}%><br>
   <%=link_to user_path(user.id), class: "btn btn-info" do%>
       <div class= "fa fa-info px-1"></div> <span>Details</span>
   <%end%>
-</li><br><br>
+</li><br>
+<hr>
 <%end%>
 </ol>
