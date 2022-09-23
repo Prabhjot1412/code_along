@@ -93,3 +93,5 @@ gem "faker", "~> 2.23"
 gem "pagy", "~> 5.10"
 
 gem "ransack", "~> 3.2"
+
+gem "devise_invitable", "~> 2.0"
