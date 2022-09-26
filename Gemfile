@@ -95,3 +95,5 @@ gem "pagy", "~> 5.10"
 gem "ransack", "~> 3.2"
 
 gem "devise_invitable", "~> 2.0"
+
+gem "cancancan", "~> 3.4"

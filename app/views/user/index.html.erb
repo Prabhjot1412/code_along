@@ -1,6 +1,6 @@
 <%= render partial: 'layouts/search_for_ransack', locals: {q: @q}%>
 <br>
-<h1>Users: <%=@user.count%></h1>
+<h1>Users: <%=@user.count%> / <%=User.all.count%></h1>
 <%= render partial: "user/pagy_nav", locals: {pagy: @pagy} %>
 <br>
 <ol>

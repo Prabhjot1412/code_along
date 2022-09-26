@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'privacy', to: 'home#privacy'
   get 'terms', to: 'home#terms'
   resources :user, only: %i[index show]
-  resources :post, only: %i[index create]
+  resources :post, only: %i[index create destroy]
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',

@@ -6,8 +6,12 @@
 <%= render partial: "user/pagy_nav", locals: {pagy: @pagy} %>
   <ol>
   <%@posts.each do |p|%>
-    <li><b><%=p.title%></b></li><br>
-    <%=p.body%>
+    <div style="display: flex;"><div class="p-1"><li><b><%=p.title%></b></li></div>
+    <div class="p-1"><%=link_to post_path(p.id), data: {turbo_method: :delete} do%>
+      <i class="fa fa-trash-can"></i>
+    <%end%></div></div><br>
+    <%=simple_format(p.body)%>
+    
     <hr>    
   <%end%>
   </ol>

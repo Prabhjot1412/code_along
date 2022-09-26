@@ -18,7 +18,7 @@
     <%= render 'layouts/header' %>
     <div class="container">
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="alert"><%= simple_format(alert) %></p>
       <%= yield %>
     </div>
     
