@@ -20,6 +20,6 @@ class PostController < ApplicationController
   end
   private
   def user_parameters
-    params.permit(:title, :body)
+    params.permit(:title, :body, :premium)
   end
 end

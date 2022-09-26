@@ -11,12 +11,19 @@
       <i class="fa fa-trash-can"></i>
     <%end%></div></div><br>
     <%=markdown(p.body)%>
+    <%if p.premium == true %>
+    <div><i class="fa-sharp fa-solid fa-circle-user p-1"></i>Premium post</div>
+    <%end%>
     <hr>    
   <%end%>
   </ol>
 <%end%>
 <h3>Create new post</h3>
 <%= form_with url: '/post', method: :post do |f|%>
+  <%=f.label :premium do%>
+  <div><i class="fa-sharp fa-solid fa-circle-user p-1"></i>Premium post</div>
+  <%end%>
+  <%=f.check_box :premium %><br>
   <%=f.label :title, 'Title'%><br>
   <%=f.text_field :title%><br><br>
   <%=f.label :body, "Post :-"%><br>
