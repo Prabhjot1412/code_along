@@ -1,4 +1,10 @@
 <%= render partial: 'layouts/search_for_ransack', locals: {q: @q}%>
+<%= sort_link(@q, :name)  do%>
+  <strong>Name </strong>
+<%end%>
+<%= sort_link(@q, :posts_count) do%>
+  <i class="fa-solid fa-envelopes-bulk sorting"> </i>
+<%end%>
 <br>
 <h1>Users: <%=@user.count%> / <%=User.all.count%></h1>
 <%= render partial: "user/pagy_nav", locals: {pagy: @pagy} %>
