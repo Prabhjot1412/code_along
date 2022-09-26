@@ -10,8 +10,7 @@
     <div class="p-1"><%=link_to post_path(p.id), data: {turbo_method: :delete} do%>
       <i class="fa fa-trash-can"></i>
     <%end%></div></div><br>
-    <%=simple_format(p.body)%>
-    
+    <%=markdown(p.body)%>
     <hr>    
   <%end%>
   </ol>
@@ -21,6 +20,10 @@
   <%=f.label :title, 'Title'%><br>
   <%=f.text_field :title%><br><br>
   <%=f.label :body, "Post :-"%><br>
-  <%=f.text_area :body%><br>
+  <%= f.text_area :body, 
+  style: "width: 100%", 
+  rows: 8, 
+  maxlength: 5000
+  %><br>
   <%=f.submit 'Submit'%>
 <%end%>
