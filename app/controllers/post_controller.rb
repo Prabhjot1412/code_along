@@ -1,7 +1,7 @@
 class PostController < ApplicationController
   def index
     Pagy::DEFAULT[:items] = 5
-    @pagy, @posts = pagy(current_user.posts.order(title: :asc))
+    @pagy, @posts = pagy(Post.all.order(title: :asc))
   end
 
   def create

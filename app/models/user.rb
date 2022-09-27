@@ -6,6 +6,12 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable, :trackable, :confirmable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[google_oauth2 github]
   has_many :posts, dependent: :destroy
+  # User must have a stripe customer id when created
+  after_create do
+    customer = Stripe::Customer.create(email: email)
+    update(stripe_customer_id: customer.id)
+  end
+
   def self.from_omniauth(access_token)
     user = User.where(email: access_token.info.email).first
     user ||= User.create(name: access_token.info.name,
