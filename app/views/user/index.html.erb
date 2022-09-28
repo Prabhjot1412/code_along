@@ -11,11 +11,13 @@
 <br>
 <ol>
 <%@user.each do |user|%>
+<div class="container bg-light p-4">
 <li><%= render partial: "user/user",locals: {user: user}%><br>
   <%=link_to user_path(user.id), class: "btn btn-info" do%>
       <div class= "fa fa-info px-1"></div> <span>Details</span>
   <%end%>
 </li><br>
-<hr>
+<hr style="color: blue;">
+</div><br>
 <%end%>
 </ol>

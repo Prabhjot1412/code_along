@@ -7,16 +7,17 @@
   <ol>
   <%@posts.each do |p|%>
     <div style="display: flex;"><div class="p-1"><li><b><%=p.title%></b></li></div>
-    <div class="p-1"><%=link_to post_path(p.id), data: {turbo_method: :delete} do%>
-      <i class="fa fa-trash-can"></i>
-    <%end%></div></div><br>
+    <%if can? :destroy, p%><div class="p-1"><%=link_to post_path(p.id), data: {turbo_method: :delete} do%>
+      <i class="fa fa-trash-can" style="color: blue;"></i>
+    <%end%></div><%end%></div><br>
     <%=markdown(p.body)%>
     <%if p.premium == true %>
     <div><i class="fa-sharp fa-solid fa-circle-user p-1"></i>Premium post</div>
     <%end%>
-    <hr>    
+    <hr style="color: blue;">   
   <%end%>
   </ol>
+
 <%end%>
 <h3>Create new post</h3>
 <%= form_with url: '/post', method: :post do |f|%>
@@ -32,5 +33,5 @@
   rows: 8, 
   maxlength: 5000
   %><br>
-  <%=f.submit 'Submit'%>
+  <%=f.submit 'Submit',class:'btn btn-info border-3 border-primary rounded'%>
 <%end%>

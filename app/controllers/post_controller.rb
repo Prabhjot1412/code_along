@@ -1,7 +1,8 @@
 class PostController < ApplicationController
   def index
     Pagy::DEFAULT[:items] = 5
-    @pagy, @posts = pagy(Post.all.order(title: :asc))
+    @pagy, @posts = pagy(Post.all.order(title: :asc)) if current_user.paid?
+    @pagy, @posts = pagy(Post.where(premium: false).order(title: :asc)) if current_user.free?
   end
 
   def create

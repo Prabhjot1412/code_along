@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
   enum :membership, %i[free paid], default: 0
+  scope :free_users, -> { where(membership: "free")}
+  # Ex:- scope :active, -> {where(:active => true)}
   # User must have a stripe customer id when created
   after_create do
     customer = Stripe::Customer.create(email: email)
