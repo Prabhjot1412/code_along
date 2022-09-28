@@ -2,3 +2,10 @@ Name: <%=user.username%><br>
 Email: <%=user.email%><br>
 Posts count: <%=user.posts_count%><br>
 Confirmation status: <%= current_user.confirmed? ? "Confirmed" : "unconfirmed" %>
+<br>
+account type  
+<%if user.free?%>
+<i class="fa-regular fa-user sorting"></i> Free
+<% elsif user.paid? %>
+<i class="fa-sharp fa-solid fa-circle-user p-1 sorting"></i> Paid
+<%end%>

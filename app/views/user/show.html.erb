@@ -1,2 +1,5 @@
 <h1>User Details</h1>
-<%=render partial: 'user/user', locals: {user: @user}%>
+<%=render partial: 'user/user', locals: {user: @user}%><br><br>
+<%if @user.free?%>
+<div class='btn btn-info'><%=link_to 'Buy premium',{controller: "home",action: "premium"} %></div>
+<%end%>
